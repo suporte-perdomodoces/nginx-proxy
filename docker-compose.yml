@@ -1,3 +1,5 @@
+version: "3.9"
+
 services:
   nginx:
     image: nginx:latest
@@ -11,17 +13,7 @@ services:
       - ./nginx/certs:/etc/nginx/certs:ro
     networks:
       - nginx-proxy-net
-    deploy:
-      replicas: 1
-      restart_policy:
-        condition: on-failure
-    resources:
-      reservations:
-        cpus: "0.1"
-        memory: 128M
-      limits:
-        cpus: "0.5"
-        memory: 246M
+    restart: on-failure
 
 networks:
   nginx-proxy-net:
