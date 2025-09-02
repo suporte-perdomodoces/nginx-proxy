@@ -13,6 +13,7 @@ services:
       - ./nginx/certs:/etc/nginx/certs:ro
     networks:
       - nginx-proxy-net
+      - intranet-network
     restart: on-failure
 
 networks:
