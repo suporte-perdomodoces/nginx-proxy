@@ -18,3 +18,6 @@ services:
 networks:
   nginx-proxy-net:
     external: true
+
+  intranet-network:
+    external: true
